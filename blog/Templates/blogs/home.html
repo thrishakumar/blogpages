@@ -1,0 +1,37 @@
+
+
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Home</title>
+
+</head>
+<body>
+<div class="about-container" style="text-align: center;box-shadow: 0 4px 8px 0 #F90B6D;padding: 20px;margin: 50px;" >
+    <h1 style=" color: #F90B6D; font-family: 'Open Sans', sans-serif; font-size: 45px; font-weight: normal; line-height: 48px; margin: 0"> BlogTyrant </h1>
+       <a href="{% url 'createpost-url' %}" ><button class="GFG" style="background-color: white;border: 2px solid black;color: black;padding: 5px 10px;text-align: center;display: inline-block;font-size: 16px;margin: 10px 30px;cursor: pointer">Add Post</button> </a>
+
+</div>
+       {% for post in posts %}
+
+  <div class="card" style="  box-shadow: 0 4px 8px 0 #F90B6D;display: grid;grid-template-row:  repeat(2, 1fr);padding: 5px;margin: 10px;">
+
+
+
+
+      <h1 style="font-size: 28px; font-weight: 300; color:#F90B6D; margin: 0 0 24px; font-family: 'Open Sans', sans-serif" >{{ post.title }} </h1>
+      <p style=" font-family: 'Inder', sans-serif; line-height: 30px; margin-bottom: 10px; color: black;border-top: 1px solid #111; display: block; margin-top: 20px; padding-top: 20px; position: relative; "> {{ post.description  }}</p>
+          <h3 style=" color: #F90B6D; font-size: 18px; font-family: 'Signika', sans-serif; padding-bottom: 10px;"> By {{ post.author }}</h3>
+      <small style="color: black;  display: inline-block; font-family: 'Georgia', serif; font-style: italic; font-size: 14px; line-height: 22px;"> posted on {{ post.date_posted }}</small>
+    </div>
+
+{% endfor %}
+
+<div>
+  <h3 style="background-color: #d54d7b ;color: black;text-align: center; font-family: 'Helvetica Neue', sans-serif;">Built by Thrisha Kumaravel </h3>
+</div>
+
+</body>
+</html>
+
